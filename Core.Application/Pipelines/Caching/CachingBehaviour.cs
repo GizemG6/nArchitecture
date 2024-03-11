@@ -18,7 +18,7 @@ namespace Core.Application.Pipelines.Caching
         {
             _cache = cache;
             _logger = logger;
-            _cacheSettings = configuration.GetSection("CacheSettings").Get<CacheSettings>();
+            _cacheSettings = configuration.GetSection("CacheSettings").Get<CacheSettings>(); //get error
         }
 
         public async Task<TResponse> Handle(TRequest request, RequestHandlerDelegate<TResponse> next, CancellationToken cancellationToken)
